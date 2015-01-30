@@ -6,3 +6,9 @@ get('/bands') do
   @bands = Band.all()
   erb(:bands)
 end
+
+post("/bands") do
+  name = params.fetch('name')
+  @band = Band.create({:name => name})
+  redirect ('/bands')
+end

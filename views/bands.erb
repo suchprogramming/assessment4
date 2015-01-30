@@ -1,0 +1,24 @@
+<h1>Band Listing</h1>
+
+<p>Current Bands</p>
+
+<div class="list-group">
+  <% @bands.each do |band| %>
+  <a href="/bands/<%= band.id() %>" class="list-group-item"><%= band.name() %></a>
+  <% end %>
+</div>
+
+<p>Add Band:</p>
+
+<div class="form-group">
+  <form action='/bands' method='post'>
+    <label for='name'>Band Name</label>
+    <input id='name' name='name' type='text' class="form-control">
+    <br>
+    <button type="submit" class="btn btn-success">Add</button>
+  </form>
+</div>
+<form method="post" action="/bands">
+  <input name="_method" type="hidden" value="delete">
+  <button type="submit" class="btn btn-danger">Delete All</button>
+</form>
