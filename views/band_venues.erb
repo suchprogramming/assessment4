@@ -1,6 +1,6 @@
 <h1><%= @band.name %></h1>
 
-<h4>Venues</h4>
+<h4>Select Venues</h4>
 
 
 <% @venues.each() do |venue| %>
@@ -10,5 +10,9 @@
   </div>
 </form>
 <% end %>
-
+<form method="post" action="/bands/<%= @band.id() %>">
+  <input name="_method" type="hidden" value="delete">
+  <button type="submit" class="btn btn-danger">Delete <%= @band.name %></button>
+</form>
+<br>
 <a class="btn btn-info" href="/bands" role="button">Band Listing</a>
