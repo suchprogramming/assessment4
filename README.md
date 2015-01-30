@@ -8,7 +8,6 @@ Requires PostgreSQL
 ```
 SCHEMA GOES HERE 
 ```
-
 ### Gems used
 ```
 sinatra
