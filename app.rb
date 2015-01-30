@@ -8,7 +8,24 @@ get('/bands') do
 end
 
 post("/bands") do
-  name = params.fetch('name')
-  @band = Band.create({:name => name})
+  band_name = params.fetch('band_name')
+  @band = Band.create({:name => band_name})
+  redirect ('/bands')
+end
+
+get('/bands/:id') do
+  @venues = Venue.all()
+  @band = Band.find(params.fetch("id").to_i())
+  erb(:band_venues)
+end
+
+post("/venues") do
+  venue_name = params.fetch('venue_name')
+  @venue = Venue.create({:name => venue_name})
+  redirect ('/bands')
+end
+
+delete("/bands") do
+  Band.delete_all()
   redirect ('/bands')
 end

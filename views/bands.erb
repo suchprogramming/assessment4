@@ -8,17 +8,29 @@
   <% end %>
 </div>
 
-<p>Add Band:</p>
+<h4>Add Band:</h4>
 
 <div class="form-group">
   <form action='/bands' method='post'>
-    <label for='name'>Band Name</label>
-    <input id='name' name='name' type='text' class="form-control">
+    <label for='band_name'>Band Name</label>
+    <input id='band_name' name='band_name' type='text' class="form-control">
     <br>
-    <button type="submit" class="btn btn-success">Add</button>
+    <button type="submit" class="btn btn-success">Add Band</button>
+  </form>
+  <br>
+  <form method="post" action="/bands">
+    <input name="_method" type="hidden" value="delete">
+    <button type="submit" class="btn btn-danger">Delete Bands</button>
   </form>
 </div>
-<form method="post" action="/bands">
-  <input name="_method" type="hidden" value="delete">
-  <button type="submit" class="btn btn-danger">Delete All</button>
-</form>
+
+<h4>Add Venue:</h4>
+
+<div class="form-group">
+  <form action='/venues' method='post'>
+    <label for='venue_name'>Venue Name</label>
+    <input id='venue_name' name='venue_name' type='text' class="form-control">
+    <br>
+    <button type="submit" class="btn btn-success">Add Venue</button>
+  </form>
+</div>

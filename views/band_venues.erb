@@ -1,0 +1,14 @@
+<h1><%= @band.name %></h1>
+
+<h4>Venues</h4>
+
+
+<% @venues.each() do |venue| %>
+<form role="form">
+  <div class="checkbox">
+    <label><input type="checkbox" value="<%= venue.id() %>"> <%= venue.name() %> </label>
+  </div>
+</form>
+<% end %>
+
+<a class="btn btn-info" href="/bands" role="button">Band Listing</a>
