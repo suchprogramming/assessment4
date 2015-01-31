@@ -15,7 +15,7 @@
   <button type="submit" class="btn btn-danger">Delete <%= @band.name %></button>
 </form>
 
-<h4>Select Venues</h4>
+<h4>Available Venues</h4>
 
 <% if @venues.any?() %>
   <form action="/bands/venues/<%= @band.id %>" method="post">
