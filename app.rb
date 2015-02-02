@@ -34,11 +34,11 @@ patch('/bands/:id') do
   redirect('/bands')
 end
 
-patch("/bands/venues/:id") do
+post("/bands/venues/:id") do
   band_id = params.fetch("id").to_i()
   @band = Band.find(band_id)
   venue_ids = params.fetch("venue_ids")
-  @band.update({:venue_ids => venue_ids})
+  @band.venues().<<(Venue.find(venue_ids))
   @venues = Venue.all()
   erb(:band_venues)
 end
